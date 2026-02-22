@@ -1,10 +1,14 @@
 
 import './App.css'
 import {Button} from '@heroui/react'
+import NavBar from './components/NavBar'
 
 function App() {
 
-  return <Button color="primary"> Test</Button>
+  return( 
+    <NavBar/>
+    
+  )
   
 }
 
