@@ -14,7 +14,7 @@ export default function NavBar(){
 
     const navigate = useNavigate() //returns function that lets us use navigate()
     return(
-        <Navbar isBordered className="bg-gradient-to-r from-orange-600 to-orange-400">
+        <Navbar isBordered >
             <NavbarContent justify="start">
                 <Dropdown>
                     <DropdownTrigger>                        
@@ -46,7 +46,7 @@ export default function NavBar(){
 
                 
             <NavbarContent justify="end" >
-                <Button color="" size="md" > 
+                <Button size="md" > 
                     Sign in
                 </Button>
             </NavbarContent>
