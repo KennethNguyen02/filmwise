@@ -2,57 +2,75 @@
 @plugin "./hero.js";
 @source "../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}";
 
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-    
-    /* ---------- Brand / Primary ---------- */
-  --color-primary: #F97316;
-  --color-primary-hover: #EA580C;
-  --color-primary-soft: #FFF7ED;
-  --color-primary-light: #FDBA74;
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-light: var(--primary-light);
 
-  /* ---------- Backgrounds ---------- */
-  --color-background: #FFFFFF;
-  --color-surface: #F9FAFB;
-  --color-surface-elevated: #FFFFFF;
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
 
-  /* ---------- Borders ---------- */
-  --color-border: #E5E7EB;
+  --color-border: var(--border);
 
-  /* ---------- Text ---------- */
-  --color-text-primary: #111827;
-  --color-text-secondary: #4B5563;
-  --color-text-muted: #9CA3AF;
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
 
-  /* ---------- States ---------- */
-  --color-success: #16A34A;
-  --color-warning: #F59E0B;
-  --color-error: #DC2626;
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+}
 
+/* 
+   2) PRIMITIVE TOKENS light
 
-  /*DARK*/
-     /* ---------- Brand / Primary ---------- */
-  --color-primary-dark: #FB923C;
-  --color-primary-hover-dark: #F97316;
-  --color-primary-soft-dark: rgba(251, 146, 60, 0.1);
-  --color-primary-light-dark: #FDBA74;
+*/
+:root {
+  --primary: #F97316;
+  --primary-hover: #EA580C;
+  --primary-soft: #FFF7ED;
+  --primary-light: #FDBA74;
 
-  /* ---------- Backgrounds ---------- */
-  --color-background-dark: #0F172A;
-  --color-surface-dark: #1E293B;
-  --color-surface-elevated-dark: #334155;
+  --background: #FFFFFF;
+  --surface: #F9FAFB;
+  --surface-elevated: #FFFFFF;
 
-  /* ---------- Borders ---------- */
-  --color-border-dark: #475569;
+  --border: #E5E7EB;
 
-  /* ---------- Text ---------- */
-  --color-text-primar-dark: #F8FAFC;
-  --color-text-secondary-dark: #CBD5E1;
-  --color-text-muted-dark: #94A3B8;
+  --text-primary: #111827;
+  --text-secondary: #4B5563;
+  --text-muted: #9CA3AF;
 
-  /* ---------- States ---------- */
-  --color-success-dark: #22C55E;
-  --color-warning-dark: #FBBF24;
-  --color-error-dark: #EF4444;
+  --success: #16A34A;
+  --warning: #F59E0B;
+  --error: #DC2626;
+}
+
+/* 
+  PRIMITIVE TOKENS dark
+ */
+.dark {
+  --primary: #FB923C;
+  --primary-hover: #F97316;
+  --primary-soft: rgba(251, 146, 60, 0.1);
+  --primary-light: #FDBA74;
+
+  --background: #0F172A;
+  --surface: #1E293B;
+  --surface-elevated: #334155;
+
+  --border: #475569;
+
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+
+  --success: #22C55E;
+  --warning: #FBBF24;
+  --error: #EF4444;
 }

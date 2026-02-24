@@ -10,7 +10,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <HeroUIProvider>
-        <main className="dark text-foreground bg-background">
+        <main className="min-h-screen bg-background text-text-primary">
           <App />
         </main>
       </HeroUIProvider>
