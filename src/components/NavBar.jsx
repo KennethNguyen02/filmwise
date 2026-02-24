@@ -2,8 +2,7 @@ import SearchBar from "./SearchBar";
 
 import {Button} from '@heroui/react'
 import {Menu, Flame, Sparkles, Star, Calendar} from 'lucide-react'
-import { Link } from 'react-router-dom'
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -13,12 +12,9 @@ import {
 
 export default function NavBar(){
 
-    const navigate = useNavigate() //returnerer en funksjon som lar oss route
+    const navigate = useNavigate() //returns function that lets us use navigate()
     return(
-        <Navbar isBordered>
-
-
-
+        <Navbar isBordered className="bg-gradient-to-r from-orange-600 to-orange-400">
             <NavbarContent justify="start">
                 <Dropdown>
                     <DropdownTrigger>                        
@@ -33,42 +29,27 @@ export default function NavBar(){
                         <DropdownItem key="new-relases" startContent={<Sparkles/>}>New Releases</DropdownItem>
                         <DropdownItem key="upcoming"startContent={<Calendar/>}>Upcoming</DropdownItem>
 
-
-
-
+                        {/* IF LOGGED IN
+                        ADD PROFILE and LOG OUT */}
                     </DropdownMenu>
-
-
-
-
                 </Dropdown>
 
-                <NavbarBrand> {/* logo */}
-                    <Link to="/">
-                        <p className="font-bold">FilmWise</p>
-                    </Link>
-                </NavbarBrand>
-
-
-             </NavbarContent>
+                <NavbarBrand onClick={() => navigate("/")} className="cursor-pointer">
+                            <p>Filmwise</p>
+                </NavbarBrand> {/* logo */}              
+            </NavbarContent>
 
 
             <NavbarContent className=" sm:flex gap-3" justify="center">
-
-
-
                 <SearchBar/>
             </NavbarContent>
 
                 
             <NavbarContent justify="end" >
-                <Button color="primary" size="md" > 
+                <Button color="" size="md" > 
                     Sign in
                 </Button>
-
             </NavbarContent>
-
-
 
         </Navbar>
       
