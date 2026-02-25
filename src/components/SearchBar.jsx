@@ -2,10 +2,10 @@ import {Form, Input} from '@heroui/react';
 
 export default function SearchBar(){
     return(
-        <Form>
+        <Form className="w-full">
             <Input 
                 placeholder ="Search for a movie.."
-                size = "md"
+                className="w-full"
                  />
             
         </Form>

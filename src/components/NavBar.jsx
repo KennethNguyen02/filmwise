@@ -21,15 +21,13 @@ export default function NavBar(){
 
                 <Dropdown>
                     <DropdownTrigger>                        
-                        <Button isIconOnly aria-label = "Menu" size="md" color ="bg">
-                            <Menu />
+                        <Button size="md" color="bg-primary" isIconOnly radius="full" className="hover:bg-primary-hover">
+                            <Menu/>
                         </Button> 
                     </DropdownTrigger>
 
                     <DropdownMenu onAction={(key) => navigate(`/${key}`)}
-                        bg-surface-elevated
-                        text-text-primary
-                        border
+                        
                     >
                         <DropdownItem   key="top-rated" startContent={<Star/>}>Top Rated</DropdownItem>
                         <DropdownItem key="trending" startContent={<Flame/>}> Trending</DropdownItem>
@@ -47,7 +45,7 @@ export default function NavBar(){
             </NavbarContent>
 
 
-            <NavbarContent className=" sm:flex gap-3" justify="center">
+            <NavbarContent className=" sm:flex flex-3 gap-3" justify="center">
                 <SearchBar/>
             </NavbarContent>
 

@@ -14,6 +14,7 @@ export default function ThemeToggle(){
                 setIsDark(!isDark);
                 document.documentElement.classList.toggle("dark")
             }}
+            className="bg-primary hover:bg-primary-hover"
         > 
             {isDark? <Sun/> : <Moon/>}
         </Button>
