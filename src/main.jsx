@@ -4,15 +4,19 @@ import './index.css'
 import App from './App.jsx'
 import { HeroUIProvider } from '@heroui/react'
 import { BrowserRouter } from 'react-router-dom'
+import {QueryClientProvider, QueryClient} from '@tanstack/react-query'
 
+const queryClient = new QueryClient();
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <HeroUIProvider>
-        <main className="min-h-screen bg-background text-text-primary"> {/* darkmode*/ }
-          <App />
-        </main>
+          <QueryClientProvider client={queryClient}>
+            <main className="min-h-screen bg-background text-text-primary">
+              <App />
+            </main>
+        </QueryClientProvider>
       </HeroUIProvider>
     </BrowserRouter>
   </StrictMode>,
