@@ -9,8 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-import {
-  Navbar, NavbarBrand , NavbarContent,NavbarItem,Input,DropdownItem,DropdownTrigger,Dropdown,DropdownMenu,Avatar} from "@heroui/react";
+import {Navbar, NavbarBrand , NavbarContent,NavbarItem,Input,DropdownItem,DropdownTrigger,Dropdown,DropdownMenu,Avatar} from "@heroui/react";
 
 export default function NavBar(){
 
