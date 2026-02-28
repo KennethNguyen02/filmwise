@@ -2,7 +2,7 @@ import SearchBar from "./SearchBar"
 import ThemeToggle from "./ThemeToggle";
 import LoginModal from "./LoginModal";
 
-import {Button, useDisclosure} from '@heroui/react'
+import {Button, useDisclosure, Image} from '@heroui/react'
 import {Menu, Flame, Sparkles, Star, Calendar} from 'lucide-react'
 import { useNavigate } from "react-router-dom";
 
@@ -18,7 +18,8 @@ export default function NavBar(){
         <Navbar className ="bg-primary pl-0" >
             <NavbarContent justify="start" >
                 <NavbarBrand onClick={() => navigate("/")} className="cursor-pointer">
-                            <p>Filmwise</p>
+                    <Image  src = "/images/wogomain.svg"/>
+                    <Image  src = "/images/smallwogo.svg"/>
                 </NavbarBrand> {/* logo */}  
                 <Dropdown >
                     <DropdownTrigger>                        
@@ -51,7 +52,7 @@ export default function NavBar(){
                 </Button>
                 <LoginModal 
                     isOpen={isOpen} //useDisclosure sets isOpen to false as standard
-                    OnOpenChange={onOpenChange} //onOpenChange = !isOpen
+                    onOpenChange={onOpenChange} //onOpenChange = !isOpen
                 /> 
            
 
