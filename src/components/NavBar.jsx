@@ -15,19 +15,19 @@ export default function NavBar(){
 
     const navigate = useNavigate() //returns function that lets us use navigate()
     return(
-        <Navbar className ="bg-primary" >
-            <NavbarContent justify="start">
-
-                <Dropdown>
+        <Navbar className ="bg-primary pl-0" >
+            <NavbarContent justify="start" >
+                <NavbarBrand onClick={() => navigate("/")} className="cursor-pointer">
+                            <p>Filmwise</p>
+                </NavbarBrand> {/* logo */}  
+                <Dropdown >
                     <DropdownTrigger>                        
                         <Button size="md" color="bg-primary" isIconOnly radius="full" className="hover:bg-primary-hover">
                             <Menu/>
                         </Button> 
                     </DropdownTrigger>
 
-                    <DropdownMenu onAction={(key) => navigate(`/${key}`)}
-                        
-                    >
+                    <DropdownMenu onAction={(key) => navigate(`/${key}`)}>
                         <DropdownItem   key="top-rated" startContent={<Star/>}>Top Rated</DropdownItem>
                         <DropdownItem key="trending" startContent={<Flame/>}> Trending</DropdownItem>
                         <DropdownItem key="new-relases" startContent={<Sparkles/>}>New Releases</DropdownItem>
@@ -36,11 +36,7 @@ export default function NavBar(){
                         {/* IF LOGGED IN
                         ADD PROFILE and LOG OUT */}
                     </DropdownMenu>
-                </Dropdown>
-
-                <NavbarBrand onClick={() => navigate("/")} className="cursor-pointer">
-                            <p>Filmwise</p>
-                </NavbarBrand> {/* logo */}              
+                </Dropdown>            
             </NavbarContent>
 
 

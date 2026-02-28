@@ -2,7 +2,8 @@ import { useSearchParams } from "react-router";
 import {useQuery} from '@tanstack/react-query'
 import {searchTitle} from '../api/tmbd'
 
-import MovieCard from '../components/MovieCard'
+import ListCard from '../components/ListCard'
+import {Spinner} from '@heroui/react'
 
 export default function Search(){
 
@@ -17,12 +18,12 @@ export default function Search(){
         queryFn: () => searchTitle(query)
      })
 
-    if (isLoading) {return 'Loading'}
+    if (isLoading) {return <div className="flex justify-center items-center min-h-screen"><Spinner/></div>} //justifycen-horison, itemscen-verikalt
 
     if (error) {return 'error:' + error.message}
 
     return( 
         data.map(
-            (title) => <MovieCard key={title.id}title={title} />)     
+            (title) => <ListCard key={title.id}title={title} />)     
     )
 }
