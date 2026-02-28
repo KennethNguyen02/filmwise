@@ -24,7 +24,7 @@ export default function SearchBar(){
 
     return(
         <Form className="w-full flex flex-row"
-            onSubmit= {(e) => e.preventDefault()}
+            onSubmit= {(e) => e.preventDefault()} //prevents form from refreshing instead using react routing
         >
             
         

@@ -15,7 +15,7 @@ export async function fetchCategory(mediaType, category, genreId = null){ {/* me
 }
 
 export async function searchMovies(query){
-    const res = await fetch(`${BASE_URL}/search/movie?/?api_key=${API_KEY}&query=${query}`)
-    const data = await res.json
+    const res = await fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}`)
+    const data = await res.json()
     return data.results; /*results is the name of the array of movies that TMBD returns*/
 }
