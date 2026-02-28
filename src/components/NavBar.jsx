@@ -1,12 +1,10 @@
 import SearchBar from "./SearchBar"
 import ThemeToggle from "./ThemeToggle";
+import LoginModal from "./LoginModal";
 
-import {Button} from '@heroui/react'
+import {Button, useDisclosure} from '@heroui/react'
 import {Menu, Flame, Sparkles, Star, Calendar} from 'lucide-react'
 import { useNavigate } from "react-router-dom";
-
-
-
 
 
 import {Navbar, NavbarBrand , NavbarContent,NavbarItem,Input,DropdownItem,DropdownTrigger,Dropdown,DropdownMenu,Avatar} from "@heroui/react";
@@ -14,6 +12,8 @@ import {Navbar, NavbarBrand , NavbarContent,NavbarItem,Input,DropdownItem,Dropdo
 export default function NavBar(){
 
     const navigate = useNavigate() //returns function that lets us use navigate()
+    const { isOpen, onOpen, onOpenChange } = useDisclosure(); //heroUI hook, onOpen is the function opening the Modal
+
     return(
         <Navbar className ="bg-primary pl-0" >
             <NavbarContent justify="start" >
@@ -46,9 +46,15 @@ export default function NavBar(){
 
                 
             <NavbarContent justify="end" >
-                <Button size="md" className="bg-primary hover:bg-primary-hover" > 
+                <Button size="md" className="bg-primary hover:bg-primary-hover" onPress={onOpen}> 
                     Sign in
                 </Button>
+                <LoginModal 
+                    isOpen={isOpen} //useDisclosure sets isOpen to false as standard
+                    OnOpenChange={onOpenChange} //onOpenChange = !isOpen
+                /> 
+           
+
                             
                 <ThemeToggle/>
             </NavbarContent>
