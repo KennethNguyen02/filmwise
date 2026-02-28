@@ -9,7 +9,7 @@ import TopRated from './pages/TopRated'
 import NewReleases from './pages/NewReleases'
 import Upcoming from './pages/Upcoming'
 import Search from './pages/Search'
-import MovieDetail from './pages/MovieDetail'
+import TitleDetail from './pages/TitleDetail'
 
 function App() {
 
@@ -23,7 +23,7 @@ function App() {
         <Route path="/new-releases" element={<NewReleases />} />
         <Route path="/upcoming" element={<Upcoming />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/movie/:id" element={<MovieDetail />} />
+        <Route path="/title/:id" element={<TitleDetail />} />
       </Routes>
     </>
     

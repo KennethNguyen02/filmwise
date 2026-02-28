@@ -21,12 +21,8 @@ export default function Search(){
 
     if (error) {return 'error:' + error.message}
 
-    console.log(data)
-    return(
-        
+    return( 
         data.map(
-            (movie) => <MovieCard movie={movie} />)
-        
+            (title) => <MovieCard key={title.id}title={title} />)     
     )
-   
 }
