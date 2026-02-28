@@ -1,5 +1,5 @@
 import MovieCard from "../components/MovieCard"
-import {searchMovies} from '../api/tmbd.js'
+import {searchTitle} from '../api/tmbd.js'
 import {useQuery} from '@tanstack/react-query'
 
 

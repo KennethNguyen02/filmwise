@@ -1,6 +1,6 @@
 import { useSearchParams } from "react-router";
 import {useQuery} from '@tanstack/react-query'
-import {searchMovies} from '../api/tmbd'
+import {searchTitle} from '../api/tmbd'
 
 import MovieCard from '../components/MovieCard'
 
@@ -14,7 +14,7 @@ export default function Search(){
 
     const {data, isLoading, error} = useQuery({ //returns data
         queryKey: ['search', query],
-        queryFn: () => searchMovies(query)
+        queryFn: () => searchTitle(query)
      })
 
     if (isLoading) {return 'Loading'}

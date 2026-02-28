@@ -14,8 +14,13 @@ export async function fetchCategory(mediaType, category, genreId = null){ {/* me
     return data.results
 }
 
-export async function searchMovies(query){
-    const res = await fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}`)
+export async function searchTitle(query){
+    const res = await fetch(`${BASE_URL}/search/multi?api_key=${API_KEY}&query=${query}`) // endpoint?parameteres
     const data = await res.json()
-    return data.results; /*results is the name of the array of movies that TMBD returns*/
+    return data.results.filter(item =>
+        item.media_type === 'movie' || item.media_type === 'series')
+
+    
+    
+    ; /*results is the name of the array of movies that TMBD returns*/
 }
