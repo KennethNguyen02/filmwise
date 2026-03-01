@@ -7,20 +7,22 @@ import {Menu, Flame, Sparkles, Star, Calendar} from 'lucide-react'
 import { useNavigate } from "react-router-dom";
 
 
-import {Navbar, NavbarBrand , NavbarContent,NavbarItem,Input,DropdownItem,DropdownTrigger,Dropdown,DropdownMenu,Avatar} from "@heroui/react";
+import {Navbar, NavbarBrand , NavbarContent,DropdownItem,DropdownTrigger,Dropdown,DropdownMenu} from "@heroui/react";
+
 
 export default function NavBar(){
 
     const navigate = useNavigate() //returns function that lets us use navigate()
     const { isOpen, onOpen, onOpenChange } = useDisclosure(); //heroUI hook, onOpen is the function opening the Modal
 
+
     return(
-        <Navbar className ="bg-primary pl-0" >
+        <Navbar className ="bg-primary" >
             <NavbarContent justify="start" >
                 <NavbarBrand onClick={() => navigate("/")} className="cursor-pointer">
-                    <Image  src = "/images/wogomain.svg"/>
-                    <Image  src = "/images/smallwogo.svg"/>
-                </NavbarBrand> {/* logo */}  
+                    <Image src="/images/mainLOGO.svg" className="hidden md:block"/>
+                    <Image width={160} src="/images/smallLOGO.svg" className="md:hidden"/>  
+                </NavbarBrand> 
                 <Dropdown >
                     <DropdownTrigger>                        
                         <Button size="md" color="bg-primary" isIconOnly radius="full" className="hover:bg-primary-hover">
