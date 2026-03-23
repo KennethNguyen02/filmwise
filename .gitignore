@@ -25,5 +25,10 @@ dist-ssr
 
 
 #Enviromental Variables
-.env
-.env.local
+client/.env
+client/.env.local
+
+
+# .NET
+server/bin/
+server/obj/

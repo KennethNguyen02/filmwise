@@ -54,7 +54,7 @@ export default function NavBar(){
                 </Button>
                 <LoginModal 
                     isOpen={isOpen} //useDisclosure sets isOpen to false as standard
-                    onOpenChange={onOpenChange} //onOpenChange = !isOpen
+                    onOpenChange={onOpenChange} //onOpenChange = !isOpen, used for closing modal
                 /> 
            
 

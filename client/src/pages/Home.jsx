@@ -1,4 +1,4 @@
-import ListCard from "../components/ListCard"
+import ListCard from "../components/ListCard.jsx"
 import {searchTitle} from '../api/tmbd.js'
 import {useQuery} from '@tanstack/react-query'
 

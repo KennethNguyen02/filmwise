@@ -8,7 +8,7 @@ export default function LoginModal({isOpen, onOpenChange}){
                 <ModalHeader>
                 </ModalHeader>
                 <ModalFooter>
-                    <Button onPress={onOpenChange}>Avbryt</Button>
+                    <Button> </Button>
                 </ModalFooter>
             </ModalContent>
         </Modal>

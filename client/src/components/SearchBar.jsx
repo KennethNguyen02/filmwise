@@ -30,7 +30,7 @@ export default function SearchBar(){
         
             <Input 
                 onChange ={handleChange} 
-                placeholder ="Search for a movie.."
+                placeholder ="Search for a title.."
                 className="w-full"
                 value={query}
                 onKeyDown = {handleSubmit}

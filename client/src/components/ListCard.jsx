@@ -8,7 +8,7 @@ export default function ListCard({title}){
 
     return (
         <Card>
-           <CardBody className="flex flex-row gap-4 pb-5"> {/*so we can place favourite icon in top right*/}
+           <CardBody className="flex flex-row gap-4 pb-5"> 
             <Image 
                 src={`https://image.tmdb.org/t/p/w500${title.poster_path}`} 
                 width={70}
