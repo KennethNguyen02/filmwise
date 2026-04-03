@@ -1,4 +1,4 @@
-import {Input} from '@heroUI/react'
+import {Input} from '@heroui/react'
 
 export default function LoginForm(){
 
