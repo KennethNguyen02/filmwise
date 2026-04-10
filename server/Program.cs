@@ -15,6 +15,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection(); //redirects user to https if they try to use http
 
 
+//GET movies
+
 app.MapGet("/", () => "Hei" );
 
 

@@ -1,4 +1,5 @@
-import {Form, Input, Textfield} from '@heroui/react'
+import {Form, Input} from '@heroui/react'
+import {useState} from 'react'
 
 
 export default function RegisterForm(){
@@ -10,30 +11,35 @@ export default function RegisterForm(){
     const [isLoading, setIsLoading] = useState(false)  // show spinner while registering
     const [error, setError] = useState("")              // show error message if something goes wrong
 
-    function handleSubmit(){
-        return
+    function handleSubmit(e) {
+        e.preventDefault() //stops refreshing off page
+        console.log(username, email, password)
     }
 
+
     return( 
-        <Form className="flex w-96 flex-col gap-4" onSubmit={onSubmit}>
-            <Textfield
-                isRequired
-                type
-                validate ={(value) => {
-                    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
-                    return "Please enter a valid email address";
-                    }
-                    return null;
-                }}
-            >
-                <Label>Email</Label>
-                <Input placeholder="john@example.com" />
-                <FieldError />
-            </Textfield>
-
-
-
-
+        <Form className="flex w-96 flex-col gap-4" onSubmit={handleSubmit}>
+            
+            <div className="flex w-80 flex-col gap-4">
+                <div className="flex flex-col gap-1">
+                    <label htmlFor="input-username">Name</label> 
+                    <Input id="input-username" placeholder="Kjetil123" type="text" value={username} onValueChange={setUsername} />
+                </div>
+                <div className="flex flex-col gap-1">
+                    <label htmlFor="input-type-email">Email</label>
+                    <Input id="input-type-email" placeholder="kjetil@example.com" type="email" value={email} onValueChange={setEmail}/>
+                </div>
+            
+                <div className="flex flex-col gap-1">
+                    <label htmlFor="input-type-password">Password</label>
+                    <Input id="input-password" placeholder="••••••••" type="password" value={password} onValueChange={setPassword}/>
+                </div>
+                <div className="flex flex-col gap-1">
+                    <label htmlFor="input-confirm-password">Confirm Password</label>
+                    <Input id="input-confirm-password" placeholder="••••••••" type="password" value={confirmPassword} onValueChange={setConfirmPassword}/>
+                </div>
+            </div>
+ 
         </Form>
     )
 }
