@@ -2,12 +2,12 @@ import SearchBar from "./SearchBar";
 import ThemeToggle from "./ThemeToggle";
 import LoginModal from "./LoginModal";
 
-import {Button, useDisclosure, Image} from '@heroui/react'
+import {Button, useDisclosure} from '@heroui/react'
 import {Menu, Flame, Sparkles, Star, Calendar} from 'lucide-react'
 import { useNavigate } from "react-router-dom";
 
 
-import {Navbar, NavbarBrand , NavbarContent,DropdownItem,DropdownTrigger,Dropdown,DropdownMenu} from "@heroui/react";
+import {Navbar, NavbarBrand , NavbarContent,DropdownItem,DropdownTrigger,Dropdown,DropdownMenu, Image} from "@heroui/react";
 
 
 export default function NavBar(){
