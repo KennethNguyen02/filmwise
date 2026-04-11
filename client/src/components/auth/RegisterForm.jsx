@@ -1,10 +1,10 @@
-import {Form, Input} from '@heroui/react'
+import {Form, Input, Button} from '@heroui/react'
 import {useState} from 'react'
 
 
 export default function RegisterForm(){
 
-    const[username, setUsername] = useState("");
+    const[username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
@@ -13,6 +13,9 @@ export default function RegisterForm(){
 
     const isPasswordInvalid = password.length > 0 && 
     !/^(?=.*[0-9])(?=.*[A-Z]).{8,}$/.test(password)
+
+     const isConfirmPasswordInvalid = !confirmPassword.length > 0 && 
+     confirmPassword !== password
 
 
     function handleSubmit(e) {
@@ -57,6 +60,7 @@ export default function RegisterForm(){
                         value={password} 
                         onValueChange={setPassword}
                         isInvalid={isPasswordInvalid} 
+                        errorMessage="Min 8 characters, 1 number and 1 capital letter"
                     />
                 </div>
 
@@ -68,10 +72,23 @@ export default function RegisterForm(){
                         type="password" 
                         value={confirmPassword} 
                         onValueChange={setConfirmPassword}
+                        isInvalid = {isConfirmPasswordInvalid}
+                        errorMessage="Passwords did not match"
                     />
                 </div>
             </div>
- 
+
+            <div className="flex justify-center w-full">
+                <Button
+                    type="submit"
+                    color="primary"
+                    className="w-30"
+                    isLoading={isLoading}
+                    isDisabled={isPasswordInvalid || isConfirmPasswordInvalid}
+                >
+                    Register
+                </Button>
+            </div>   
         </Form>
     )
 }

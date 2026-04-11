@@ -1,5 +1,5 @@
 
-import {Modal, ModalContent, ModalFooter, ModalBody,  ModalHeader, Button} from '@heroui/react';
+import {Modal, ModalContent, ModalBody,  ModalHeader} from '@heroui/react';
 import {Tabs, Tab} from '@heroui/react';
 
 import LoginForm from './auth/LoginForm';
@@ -32,9 +32,6 @@ export default function LoginModal({isOpen, onOpenChange}){
 
                     </div>
                </ModalBody>
-                <ModalFooter>
-                    <Button> </Button>
-                </ModalFooter>
             </ModalContent>
         </Modal>
     )
