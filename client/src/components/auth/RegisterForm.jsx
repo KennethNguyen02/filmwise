@@ -29,7 +29,7 @@ export default function RegisterForm(){
             
             <div className="flex flex-col gap-4 w-full justify-center">
                 <div className="flex flex-col gap-1">
-                    <label htmlFor="input-username">Name</label> 
+                    <label htmlFor="input-username">Username</label> 
                     <Input
                         isRequired 
                         id="input-username" 
